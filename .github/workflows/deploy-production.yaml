@@ -1,0 +1,26 @@
+name: Publish to production
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+            persist-credentials: false
+      - run: npm ci
+      - run: npm run build --if-present
+      - name: Deploy Production 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.DEPLOY_PROD }}
+          repository-name: lb-01/ths-spa-prod
+          branch: main
+          folder: dist
+          clean: true
