@@ -1,0 +1,23 @@
+name: Publish to staging
+
+on:
+   push:
+      branches-ignore:
+         - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+        - uses: actions/checkout@v6
+        - run: npm ci
+        - run: npm run build --if-present         
+        - name: Deploy staging 🚀
+          uses: JamesIves/github-pages-deploy-action@v4
+          with:
+              token: ${{ secrets.GITHUB_TOKEN }}
+              branch: gh-pages
+              folder: dist
+              clean: true
