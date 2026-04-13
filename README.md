@@ -2,7 +2,7 @@
 
 -   `npm run dev` - Starts a dev server at http://localhost:5173/
 
--   `npm run test` - Runs the tests with Vitest
+-   `npm run test` - Runs the tests with Vitest hey
 
 -   `npm run build` - Builds for production, emitting to `dist/`
 
