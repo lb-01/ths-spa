@@ -1,0 +1,33 @@
+name: Task
+description: Create a new task
+title: "[Task]: "
+labels: []
+assignees:
+  - kursusthomas
+type: task
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You are creating a new task
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What will the task be about?
+      placeholder: Tell us what you see!
+      value: "Describe the task"
+    validations:
+      required: true
+  - type: dropdown
+    id: importance
+    attributes:
+      label: Importance
+      description: How important is the task?
+      options:
+        - Very important
+        - Important
+        - Not that important
+      default: 0
+    validations:
+      required: true
