@@ -1,0 +1,29 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"test": "vitest run",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"preact": "^10.26.9"
+	},
+	"devDependencies": {
+		"@preact/preset-vite": "^2.10.2",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/preact": "^3.2.4",
+		"@vitest/ui": "^4.0.9",
+		"eslint": "^9.39.1",
+		"eslint-config-preact": "^2.0.0",
+		"jsdom": "^21.1.2",
+		"parse5": "^6.0.1",
+		"typescript": "^5.9.3",
+		"vite": "^7.0.4",
+		"vitest": "^4.0.9"
+	},
+	"eslintConfig": {
+		"extends": "preact"
+	}
+}
