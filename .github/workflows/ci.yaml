@@ -14,6 +14,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v6
+      - name: Setup .npmrc file to install from GitHub Packages
+        run: |
+          echo "@lb-01:registry=https://npm.pkg.github.com" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
+
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v6
         with:

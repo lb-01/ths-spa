@@ -9,6 +9,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@lb-01/ths-calculator": "^1.0.1",
 		"preact": "^10.26.9"
 	},
 	"devDependencies": {

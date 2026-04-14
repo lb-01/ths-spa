@@ -1,6 +1,7 @@
 import { render } from 'preact';
 
 import './style.css';
+import { Calculator } from './Calculator'; //Remember to import the Calculator component
 
 export function App() {
 	const name = "Thomas Staer";
@@ -33,6 +34,10 @@ export function App() {
 			<div style={{ fontSize: '2rem', color: '#333', fontWeight: 500 }}>
 				Hello {name}
 			</div>
+
+			<Calculator />
+
+
 			<style>
 				{`@keyframes spin { 100% { transform: rotate(360deg); } }`}
 			</style>
