@@ -10,8 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      packages: read
     steps:
         - uses: actions/checkout@v6
+        - name: Setup .npmrc file to install from GitHub Packages
+          run: |
+            echo "@lb-01:registry=https://npm.pkg.github.com" >> ~/.npmrc
+            echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
         - run: npm ci
         - run: npm run build --if-present         
         - name: Deploy staging 🚀
